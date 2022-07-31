@@ -9,8 +9,6 @@ import edu.stanford.nlp.simple.*;
 import helpers.JSONIOHelper;
 
 public class B2TextCleaning {
-	
-
 
 	public static void main(String[] args) {
 		
@@ -43,21 +41,17 @@ public class B2TextCleaning {
 	}
 	
 	
-	//This method will lemmatise the text in three steps:
-	// Remove all punctuation
-	// Standardise the text
-	// Lemmatise the text
+
 	
 	private String LemmatiseSingleDocument(String text) {
 		
 		
-		//
+		
 		text = text.replaceAll("\\p{Punct}"," ");
 		text = text.replaceAll("\\s+"," ");
 		text = text.trim();
 		text = text.toLowerCase();
 		
-		//Standardnlp object
 		Sentence sentence = new Sentence(text);
 		
 		List<String>lemmas = sentence.lemmas();
